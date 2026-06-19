@@ -62,9 +62,9 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                         className="font-display text-[3rem] xs:text-5xl sm:text-6xl md:text-[5.5rem] font-bold mb-8 leading-[1.1] text-white"
                     >
-                        Master Data <br />
+                        Transforming <br />
                         <span className="relative inline-block text-yellow-200">
-                            step by step
+                            Data Into
                             <svg className="absolute w-full h-4 -bottom-1 left-0 text-yellow-400" viewBox="0 0 200 20" preserveAspectRatio="none">
                                 <path d="M 0 15 Q 50 0 100 15 T 200 10" fill="none" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
                             </svg>
@@ -79,7 +79,7 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.25 }}
                         className="text-slate-300 max-w-xl mb-10 text-lg md:text-xl font-medium leading-relaxed"
                     >
-                        Learn data engineering visually — understand the how, why, and when behind each concept and build the skills to succeed in the real world.
+                        Engineering Data That Moves Businesses Forward.
                     </motion.p>
 
                     {/* CTA Buttons */}

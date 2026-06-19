@@ -1,0 +1,53 @@
+import React, { useRef } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+
+export const GlassCard = ({ children, className = "", hover = true, onClick }) => (
+    <div 
+        onClick={onClick}
+        className={`relative overflow-hidden rounded-2xl bg-[#160f24]/80 backdrop-blur-xl border border-white/[0.05] shadow-[0_8px_32px_rgba(0,0,0,0.5)] ${hover ? 'transition-all duration-500 hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] cursor-pointer group' : ''} ${className}`}
+    >
+        {hover && <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />}
+        <div className="relative z-10 h-full">{children}</div>
+    </div>
+);
+
+export const TiltCard = ({ children, className }) => {
+    const ref = useRef(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+    const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
+
+    const handleMouseMove = (e) => {
+        const rect = ref.current.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    return (
+        <motion.div
+            ref={ref}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ rotateY, rotateX, transformStyle: "preserve-3d" }}
+            className={`relative ${className}`}
+        >
+            <div style={{ transform: "translateZ(50px)" }}>{children}</div>
+        </motion.div>
+    );
+};

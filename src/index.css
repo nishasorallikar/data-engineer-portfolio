@@ -1,5 +1,6 @@
 /* Fonts are loaded via index.html <link> tags */
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
     --font-sans: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;

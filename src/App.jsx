@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 
 // Lazy load ALL page components for code splitting
@@ -20,7 +20,9 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<MainLayout><S><Home /></S></MainLayout>} />
+            <Route path="/home" element={<Navigate to="/" replace />} />
             <Route path="/blog" element={<MainLayout><S><Blog /></S></MainLayout>} />
+            <Route path="/blogs" element={<Navigate to="/blog" replace />} />
             <Route path="/blog/:id" element={<MainLayout><S><BlogPost /></S></MainLayout>} />
             <Route path="/project/sql-data-warehouse" element={<S><SQLDataWarehouseProject /></S>} />
         </Routes>

@@ -60,22 +60,28 @@ const Navbar = () => {
 
             {/* Desktop Links */}
             <div className="hidden md:flex items-center gap-1 text-sm font-bold text-slate-300">
-                <button onClick={() => handleNavigation('work')} className="px-4 py-2 rounded-full hover:text-yellow-400 hover:bg-white/5 transition-all duration-200 cursor-pointer">
+                <button onClick={() => {
+                    if (location.pathname !== '/') {
+                        navigate('/');
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }} className="px-4 py-2 rounded-full hover:text-yellow-400 hover:bg-white/5 transition-all duration-200 cursor-pointer">
                     Home
                 </button>
-                <Link to="/blog" className="px-4 py-2 rounded-full hover:text-yellow-400 hover:bg-white/5 transition-all duration-200">
-                    Courses
-                </Link>
-                <button onClick={() => handleNavigation('about')} className="px-4 py-2 rounded-full hover:text-yellow-400 hover:bg-white/5 transition-all duration-200 cursor-pointer">
-                    Guides
+                <button onClick={() => handleNavigation('work')} className="px-4 py-2 rounded-full hover:text-yellow-400 hover:bg-white/5 transition-all duration-200 cursor-pointer">
+                    Projects
                 </button>
+                <Link to="/blog" className="px-4 py-2 rounded-full hover:text-yellow-400 hover:bg-white/5 transition-all duration-200">
+                    Blogs
+                </Link>
             </div>
 
             <button
                 onClick={() => handleNavigation('contact')}
                 className="hidden md:flex baraa-btn shadow-md"
             >
-                Data academy
+                Contact
             </button>
 
             {/* Mobile Hamburger */}
@@ -95,17 +101,25 @@ const Navbar = () => {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full left-0 right-0 mt-3 bg-[#0f0a1a]/95 backdrop-blur-xl border border-white/[0.05] rounded-2xl p-6 flex flex-col gap-1 md:hidden shadow-[0_10px_40px_rgba(139,92,246,0.2)]"
                 >
-                    {['home', 'guides'].map(item => (
-                        <button key={item} onClick={() => handleNavigation(item === 'home' ? 'work' : 'about')} className="text-left text-slate-300 hover:text-yellow-400 transition-colors font-bold py-3 px-3 rounded-xl hover:bg-white/5 capitalize cursor-pointer">
-                            {item}
-                        </button>
-                    ))}
+                    <button onClick={() => { 
+                        setMobileOpen(false); 
+                        if (location.pathname !== '/') {
+                            navigate('/');
+                        } else {
+                            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                        }
+                    }} className="text-left text-slate-300 hover:text-yellow-400 transition-colors font-bold py-3 px-3 rounded-xl hover:bg-white/5 capitalize cursor-pointer">
+                        Home
+                    </button>
+                    <button onClick={() => handleNavigation('work')} className="text-left text-slate-300 hover:text-yellow-400 transition-colors font-bold py-3 px-3 rounded-xl hover:bg-white/5 capitalize cursor-pointer">
+                        Projects
+                    </button>
                     <Link to="/blog" onClick={() => setMobileOpen(false)} className="text-slate-300 hover:text-yellow-400 transition-colors font-bold py-3 px-3 rounded-xl hover:bg-white/5">
-                        Courses
+                        Blogs
                     </Link>
                     <hr className="border-white/[0.05] my-2" />
                     <button onClick={() => handleNavigation('contact')} className="baraa-btn w-full mt-1">
-                        Data academy
+                        Contact
                     </button>
                 </motion.div>
             )}
