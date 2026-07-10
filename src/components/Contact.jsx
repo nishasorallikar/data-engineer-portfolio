@@ -10,7 +10,7 @@ const timelineData = [
         org: 'VSM Infotech (Bengaluru, India)',
         date: 'Aug. 2025 - Present',
         active: true,
-        color: '#fde047', // Yellow for active Data role
+        color: '#38bdf8', // Yellow for active Data role
         description: [
             'Architected & deployed a production-grade Supply Chain Control Tower on Azure Databricks and Delta Lake, ingesting thousands of daily aerospace transactions from Teradata, PostgreSQL, and REST APIs via Medallion Architecture (Bronze → Silver → Gold) for Mahindra Aerospace.',
             'Designed & orchestrated end-to-end ETL/ELT pipelines using Azure Data Factory (ADF), Databricks (PySpark), and ADLS Gen2, automating ingestion across 3 upstream integrations and eliminating manual reporting workflows.',
@@ -36,9 +36,9 @@ const About = () => {
                 className="mb-4 flex flex-col md:flex-row md:items-center justify-between"
             >
                 <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight relative">
-                    Career <span className="font-handwriting text-purple-400 text-4xl sm:text-5xl">Timeline</span>
+                    Career <span className="font-handwriting text-blue-400 text-4xl sm:text-5xl">Timeline</span>
                     {/* Doodle underline */}
-                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-purple-500/50" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-500/50" viewBox="0 0 100 10" preserveAspectRatio="none">
                         <path d="M 0 5 Q 25 10 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                     </svg>
                 </h2>
@@ -56,7 +56,7 @@ const About = () => {
             {/* Timeline */}
             <div className="relative ml-4 md:ml-6 mt-12">
                 {/* Vertical line - Purple gradient */}
-                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-purple-500/50 via-purple-500/20 to-transparent" />
+                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-500/50 via-blue-500/20 to-transparent" />
 
                 <div className="space-y-12">
                     {timelineData.map((item, i) => (
@@ -85,7 +85,7 @@ const About = () => {
                             <div className="baraa-card p-6 md:p-8">
                                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
                                     <div>
-                                        <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors tracking-tight">
+                                        <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-sky-400 transition-colors tracking-tight">
                                             {item.role}
                                         </h3>
                                         <div className="text-sm font-medium mt-1 text-purple-300">{item.org}</div>
@@ -93,7 +93,7 @@ const About = () => {
                                     <span
                                         className="mt-3 sm:mt-0 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest"
                                         style={{
-                                            background: item.active ? `${item.color}15` : '#160f24',
+                                            background: item.active ? `${item.color}15` : '#1c1c24',
                                             color: item.active ? item.color : '#94a3b8',
                                             border: `1px solid ${item.active ? `${item.color}30` : '#334155'}`,
                                         }}
@@ -107,7 +107,7 @@ const About = () => {
                                     <ul className="text-slate-300 text-sm leading-relaxed mb-6 list-none space-y-3">
                                         {item.description.map((desc, idx) => (
                                             <li key={idx} className="flex gap-3">
-                                                <span className="text-purple-500 mt-1">▹</span>
+                                                <span className="text-blue-500 mt-1">▹</span>
                                                 <span>{desc}</span>
                                             </li>
                                         ))}
@@ -140,14 +140,14 @@ const contactLinks = [
         label: 'Email',
         value: 'nishasorallikar@gmail.com',
         href: 'mailto:nishasorallikar@gmail.com',
-        color: '#fde047',
+        color: '#38bdf8',
     },
     {
         icon: Linkedin,
         label: 'LinkedIn',
         value: '/in/nisha-sorallikar',
         href: 'https://linkedin.com/in/nisha-sorallikar',
-        color: '#8b5cf6',
+        color: '#3b82f6',
         external: true,
     },
     {
@@ -201,7 +201,7 @@ const Contact = () => {
                 className="mb-4 flex flex-col md:flex-row md:items-center justify-between"
             >
                 <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight relative">
-                    Get In <span className="font-handwriting text-yellow-400 text-4xl sm:text-5xl">Touch</span>
+                    Get In <span className="font-handwriting text-sky-400 text-4xl sm:text-5xl">Touch</span>
                 </h2>
                 <div className="hidden md:block h-[1px] bg-white/[0.05] flex-1 ml-10"></div>
             </motion.div>
@@ -256,7 +256,7 @@ const Contact = () => {
                                     <span className="block text-sm font-bold text-slate-300 group-hover:text-white transition-colors truncate">{link.value}</span>
                                 </div>
                                 {link.external && (
-                                    <ArrowUpRight size={16} className="text-slate-500 group-hover:text-yellow-400 transition-colors" />
+                                    <ArrowUpRight size={16} className="text-slate-500 group-hover:text-sky-400 transition-colors" />
                                 )}
                             </motion.a>
                         ))}
@@ -272,7 +272,7 @@ const Contact = () => {
                     className="baraa-card p-6 sm:p-8 relative overflow-hidden"
                 >
                     {/* Subtle glow */}
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-purple-600/10 rounded-full blur-3xl" />
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-blue-600/10 rounded-full blur-3xl" />
                     
                     <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                         <div>
@@ -306,7 +306,7 @@ const Contact = () => {
                                     type="button"
                                     onClick={generateDraft}
                                     disabled={isDrafting}
-                                    className="text-[10px] text-purple-400 hover:text-purple-300 flex items-center gap-1 disabled:opacity-50 cursor-pointer uppercase tracking-wider font-bold transition-colors"
+                                    className="text-[10px] text-blue-400 hover:text-purple-300 flex items-center gap-1 disabled:opacity-50 cursor-pointer uppercase tracking-wider font-bold transition-colors"
                                 >
                                     <Sparkles size={10} /> Draft with AI
                                 </button>

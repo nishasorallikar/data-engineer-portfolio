@@ -9,7 +9,7 @@ const MainLayout = ({ children }) => {
     };
 
     return (
-        <div className="min-h-screen bg-[#0a0514] text-white relative overflow-x-hidden selection:bg-purple-500/30 selection:text-white">
+        <div className="min-h-screen bg-[#0a0514] text-white relative overflow-x-hidden selection:bg-blue-500/30 selection:text-white">
             {/* Baraa Grid Background */}
             <div className="bg-baraa-grid"></div>
             
@@ -21,9 +21,9 @@ const MainLayout = ({ children }) => {
 
             <AIModal />
             <Toaster position="bottom-right" toastOptions={{
-                className: 'bg-[#0f0a1a] border border-white/[0.05] text-white shadow-xl',
+                className: 'bg-[#16161d] border border-white/[0.05] text-white shadow-xl',
                 style: {
-                    background: '#0f0a1a',
+                    background: '#16161d',
                     color: '#ffffff',
                     border: '1px solid rgba(255,255,255,0.05)',
                 },
@@ -47,7 +47,7 @@ const MainLayout = ({ children }) => {
                             </span>
                             <button
                                 onClick={scrollToTop}
-                                className="flex items-center gap-1.5 text-[10px] text-purple-400 hover:text-purple-300 transition-colors uppercase tracking-wider font-bold cursor-pointer group"
+                                className="flex items-center gap-1.5 text-[10px] text-blue-400 hover:text-purple-300 transition-colors uppercase tracking-wider font-bold cursor-pointer group"
                             >
                                 Back to top
                                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-y-0.5 transition-transform">

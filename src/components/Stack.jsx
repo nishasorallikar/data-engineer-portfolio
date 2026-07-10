@@ -48,7 +48,7 @@ const skillCategories = [
     {
         title: 'Cloud Platform & Services',
         icon: 'cloud',
-        color: '#fde047', // Yellow
+        color: '#38bdf8', // Yellow
         tools: ['Azure Databricks', 'Data Factory (ADF)', 'ADLS Gen2', 'Synapse Analytics', 'SQL Database', 'Key Vault', 'Event Hubs'],
         details: 'Architecting scalable data solutions on Microsoft Azure.',
         extendedDetails: [
@@ -60,7 +60,7 @@ const skillCategories = [
     {
         title: 'Big Data Processing',
         icon: 'bigdata',
-        color: '#8b5cf6', // Purple
+        color: '#3b82f6', // Purple
         tools: ['Apache Spark', 'PySpark', 'Spark SQL', 'Delta Lake', 'Structured Streaming'],
         details: 'Distributed data processing and lakehouse architectures.',
         extendedDetails: [
@@ -146,7 +146,7 @@ const skillCategories = [
 const certifications = [
     { name: 'Microsoft Certified: Azure Data Fundamentals', org: 'Microsoft (DP-900)', color: '#3b82f6' },
     { name: 'Databricks Lakehouse Fundamentals', org: 'Databricks', color: '#f59e0b' },
-    { name: 'Agile & Scrum Methodology', org: 'Jira / Software Dev', color: '#8b5cf6' },
+    { name: 'Agile & Scrum Methodology', org: 'Jira / Software Dev', color: '#3b82f6' },
 ];
 
 /* ─── Animated Category Visualizers ─── */
@@ -255,7 +255,7 @@ const DataVisualizer = ({ category }) => {
     const SpecificVisualizer = Visualizers[category.icon] || Visualizers['cloud']; 
     
     return (
-        <div className="relative w-full h-48 md:h-full bg-[#160f24] rounded-2xl border flex items-center justify-center overflow-hidden" style={{ borderColor: `${category.color}30` }}>
+        <div className="relative w-full h-48 md:h-full bg-[#1c1c24] rounded-2xl border flex items-center justify-center overflow-hidden" style={{ borderColor: `${category.color}30` }}>
             <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `radial-gradient(${category.color} 1px, transparent 1px)`, backgroundSize: '16px 16px' }} />
             <SpecificVisualizer color={category.color} />
         </div>
@@ -287,7 +287,7 @@ const SkillModal = ({ category, onClose }) => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
-                className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto p-4 sm:p-5 md:p-8 rounded-2xl md:rounded-[2rem] bg-[#0f0a1a] border border-white/[0.1] shadow-[0_0_50px_rgba(139,92,246,0.15)] z-10 flex flex-col md:flex-row gap-5 md:gap-8"
+                className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto p-4 sm:p-5 md:p-8 rounded-2xl md:rounded-[2rem] bg-[#16161d] border border-white/[0.1] shadow-[0_0_50px_rgba(139,92,246,0.15)] z-10 flex flex-col md:flex-row gap-5 md:gap-8"
             >
                 <div 
                     className="absolute top-0 left-0 w-full h-[1px]" 
@@ -301,7 +301,7 @@ const SkillModal = ({ category, onClose }) => {
                 <div className="w-full md:w-7/12 lg:w-2/3 flex flex-col justify-between order-1 md:order-2">
                     <div className="flex items-start justify-between mb-8">
                         <div className="flex items-center gap-4">
-                            <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(0,0,0,0.5)] bg-[#160f24]"
+                            <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(0,0,0,0.5)] bg-[#1c1c24]"
                                 style={{ border: `1px solid ${category.color}30` }}>
                                 {CatIcon(category.color)}
                             </div>
@@ -382,13 +382,13 @@ const SkillCard = ({ category, index, inView, onClick }) => {
             <div className="relative z-10 flex flex-col h-full">
                 <div className="flex items-center justify-between mb-5">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 bg-[#160f24]"
+                        <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 bg-[#1c1c24]"
                             style={{ border: `1px solid ${category.color}40`, boxShadow: `0 0 10px ${category.color}15` }}>
                             {CatIcon(category.color)}
                         </div>
                         <h3 className="font-display font-bold text-white text-sm">{category.title}</h3>
                     </div>
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 text-slate-400 group-hover:text-yellow-400 transition-colors group-hover:bg-white/10">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 text-slate-400 group-hover:text-sky-400 transition-colors group-hover:bg-white/10">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
@@ -440,15 +440,15 @@ const Stack = () => {
                 className="mb-12 flex flex-col items-center justify-center text-center relative"
             >
                 {/* Hand drawn accent */}
-                <svg className="absolute -top-8 w-16 h-16 text-purple-500 opacity-50 -ml-40 rotate-12" viewBox="0 0 50 50">
+                <svg className="absolute -top-8 w-16 h-16 text-blue-500 opacity-50 -ml-40 rotate-12" viewBox="0 0 50 50">
                     <path d="M 25 10 L 25 40 M 10 25 L 40 25 M 15 15 L 35 35 M 15 35 L 35 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
 
-                <div className="px-3 py-1 bg-purple-500/10 border border-purple-500/30 rounded-full text-purple-400 text-[10px] font-bold uppercase tracking-widest mb-4 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+                <div className="px-3 py-1 bg-blue-500/10 border border-blue-500/30 rounded-full text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-4 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
                     Technical Stack
                 </div>
                 <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">
-                    Tools of the <span className="text-yellow-400 font-handwriting text-4xl sm:text-6xl px-2">Trade</span>
+                    Tools of the <span className="text-sky-400 font-handwriting text-4xl sm:text-6xl px-2">Trade</span>
                 </h2>
                 <p className="text-slate-400 text-base mt-4 max-w-lg font-medium">
                     Core competencies across Data Architecture, ETL/ELT pipelines, and BI domains. Click cards to expand.
@@ -469,7 +469,7 @@ const Stack = () => {
 
             <div ref={certRef} className="mt-8 max-w-5xl mx-auto px-4">
                 <h3 className={`text-xl font-handwriting tracking-wider text-purple-300 mb-6 flex items-center justify-center gap-3 transition-all duration-500 ${certInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                    <span className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center shadow-[0_0_10px_rgba(139,92,246,0.2)]">
+                    <span className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center shadow-[0_0_10px_rgba(139,92,246,0.2)]">
                         {catIcons.cert('#a855f7')}
                     </span>
                     Certifications & Methodologies
@@ -484,12 +484,12 @@ const Stack = () => {
                                 transition: `all 400ms ease-out ${i * 120}ms`,
                             }}
                         >
-                            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 bg-[#160f24]"
+                            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 bg-[#1c1c24]"
                                 style={{ border: `1px solid ${cert.color}40`, boxShadow: `0 0 10px ${cert.color}15` }}>
                                 {catIcons.cert(cert.color)}
                             </div>
                             <div>
-                                <h4 className="font-display font-bold text-sm text-white mb-1 leading-snug group-hover:text-yellow-400 transition-colors tracking-tight">
+                                <h4 className="font-display font-bold text-sm text-white mb-1 leading-snug group-hover:text-sky-400 transition-colors tracking-tight">
                                     {cert.name}
                                 </h4>
                                 <p className="text-[11px] text-slate-400">{cert.org}</p>

@@ -130,7 +130,7 @@ export default function CourseDashboard({ courseId, title, subtitle, modules, ac
                                 <div className="h-4 w-px bg-slate-800 hidden sm:block"></div>
 
                                 {isEarned ? (
-                                    <div className="flex items-center gap-2 text-yellow-400 text-sm font-medium">
+                                    <div className="flex items-center gap-2 text-sky-400 text-sm font-medium">
                                         <Star className="w-4 h-4 fill-current" />
                                         <span>Badge Earned</span>
                                     </div>

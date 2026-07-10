@@ -21,7 +21,7 @@ export function BentoGrid({ items = [] }) {
                         bg: "bg-violet-500/10 group-hover:bg-violet-500/20",
                         text: "text-violet-300",
                         border: "border border-violet-500/20 group-hover:border-violet-500/30",
-                        glow: "from-violet-500/[0.03] to-purple-500/[0.03]",
+                        glow: "from-violet-500/[0.03] to-blue-500/[0.03]",
                         topLine: "via-violet-500"
                     },
                     emerald: {

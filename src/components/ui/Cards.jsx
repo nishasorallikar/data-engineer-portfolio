@@ -4,9 +4,9 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 export const GlassCard = ({ children, className = "", hover = true, onClick }) => (
     <div 
         onClick={onClick}
-        className={`relative overflow-hidden rounded-2xl bg-[#160f24]/80 backdrop-blur-xl border border-white/[0.05] shadow-[0_8px_32px_rgba(0,0,0,0.5)] ${hover ? 'transition-all duration-500 hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] cursor-pointer group' : ''} ${className}`}
+        className={`relative overflow-hidden rounded-2xl bg-[#1c1c24]/80 backdrop-blur-xl border border-white/[0.05] shadow-[0_8px_32px_rgba(0,0,0,0.5)] ${hover ? 'transition-all duration-500 hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] cursor-pointer group' : ''} ${className}`}
     >
-        {hover && <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />}
+        {hover && <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />}
         <div className="relative z-10 h-full">{children}</div>
     </div>
 );

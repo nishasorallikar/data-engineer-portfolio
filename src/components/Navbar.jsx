@@ -50,11 +50,11 @@ const Navbar = () => {
             transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.2 }}
             className={`fixed top-4 md:top-6 left-1/2 z-50 w-[92%] md:w-[90%] max-w-4xl backdrop-blur-xl border rounded-2xl md:rounded-full px-5 py-3.5 md:px-6 md:py-3 flex items-center justify-between transition-all duration-500 ${
                 scrolled
-                    ? 'bg-[#0f0a1a]/95 border-purple-500/30 shadow-[0_4px_30px_rgba(139,92,246,0.15)]'
+                    ? 'bg-[#16161d]/95 border-blue-500/30 shadow-[0_4px_30px_rgba(139,92,246,0.15)]'
                     : 'bg-transparent border-transparent shadow-none'
             }`}
         >
-            <Link to="/" className="font-handwriting text-2xl tracking-wide flex items-center gap-2 hover:text-purple-400 transition-colors group text-white">
+            <Link to="/" className="font-handwriting text-2xl tracking-wide flex items-center gap-2 hover:text-blue-400 transition-colors group text-white">
                 Data <span className="text-sm font-sans font-normal text-slate-400 uppercase tracking-widest mt-1">with</span> Nisha
             </Link>
 
@@ -66,13 +66,13 @@ const Navbar = () => {
                     } else {
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
-                }} className="px-4 py-2 rounded-full hover:text-yellow-400 hover:bg-white/5 transition-all duration-200 cursor-pointer">
+                }} className="px-4 py-2 rounded-full hover:text-sky-400 hover:bg-white/5 transition-all duration-200 cursor-pointer">
                     Home
                 </button>
-                <button onClick={() => handleNavigation('work')} className="px-4 py-2 rounded-full hover:text-yellow-400 hover:bg-white/5 transition-all duration-200 cursor-pointer">
+                <button onClick={() => handleNavigation('work')} className="px-4 py-2 rounded-full hover:text-sky-400 hover:bg-white/5 transition-all duration-200 cursor-pointer">
                     Projects
                 </button>
-                <Link to="/blog" className="px-4 py-2 rounded-full hover:text-yellow-400 hover:bg-white/5 transition-all duration-200">
+                <Link to="/blog" className="px-4 py-2 rounded-full hover:text-sky-400 hover:bg-white/5 transition-all duration-200">
                     Blogs
                 </Link>
             </div>
@@ -87,7 +87,7 @@ const Navbar = () => {
             {/* Mobile Hamburger */}
             <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="md:hidden text-slate-300 hover:text-purple-400 transition-colors cursor-pointer"
+                className="md:hidden text-slate-300 hover:text-blue-400 transition-colors cursor-pointer"
                 aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
             >
                 {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -99,7 +99,7 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: -10, scale: 0.98 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-0 right-0 mt-3 bg-[#0f0a1a]/95 backdrop-blur-xl border border-white/[0.05] rounded-2xl p-6 flex flex-col gap-1 md:hidden shadow-[0_10px_40px_rgba(139,92,246,0.2)]"
+                    className="absolute top-full left-0 right-0 mt-3 bg-[#16161d]/95 backdrop-blur-xl border border-white/[0.05] rounded-2xl p-6 flex flex-col gap-1 md:hidden shadow-[0_10px_40px_rgba(139,92,246,0.2)]"
                 >
                     <button onClick={() => { 
                         setMobileOpen(false); 
@@ -108,13 +108,13 @@ const Navbar = () => {
                         } else {
                             window.scrollTo({ top: 0, behavior: 'smooth' }); 
                         }
-                    }} className="text-left text-slate-300 hover:text-yellow-400 transition-colors font-bold py-3 px-3 rounded-xl hover:bg-white/5 capitalize cursor-pointer">
+                    }} className="text-left text-slate-300 hover:text-sky-400 transition-colors font-bold py-3 px-3 rounded-xl hover:bg-white/5 capitalize cursor-pointer">
                         Home
                     </button>
-                    <button onClick={() => handleNavigation('work')} className="text-left text-slate-300 hover:text-yellow-400 transition-colors font-bold py-3 px-3 rounded-xl hover:bg-white/5 capitalize cursor-pointer">
+                    <button onClick={() => handleNavigation('work')} className="text-left text-slate-300 hover:text-sky-400 transition-colors font-bold py-3 px-3 rounded-xl hover:bg-white/5 capitalize cursor-pointer">
                         Projects
                     </button>
-                    <Link to="/blog" onClick={() => setMobileOpen(false)} className="text-slate-300 hover:text-yellow-400 transition-colors font-bold py-3 px-3 rounded-xl hover:bg-white/5">
+                    <Link to="/blog" onClick={() => setMobileOpen(false)} className="text-slate-300 hover:text-sky-400 transition-colors font-bold py-3 px-3 rounded-xl hover:bg-white/5">
                         Blogs
                     </Link>
                     <hr className="border-white/[0.05] my-2" />
