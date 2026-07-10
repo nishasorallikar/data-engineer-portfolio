@@ -377,15 +377,15 @@ const TheoryPage = () => {
                                 <div className="bg-[#110b1c] p-6 rounded-xl border border-white/5 shadow-inner">
                                     <h4 className="text-sm font-mono text-pink-300 mb-3 uppercase tracking-wider">1. Naming Conventions</h4>
                                     <ul className="space-y-2 text-sm text-slate-400">
-                                        <li className="flex gap-2"><span className="text-pink-500">•</span> <span><strong className="text-slate-200">Format:</strong> Lower-Snake Case (`customer_info`).</span></li>
+                                        <li className="flex gap-2"><span className="text-pink-500">•</span> <span><strong className="text-slate-200">Format:</strong> Lower-Snake Case (<span className="text-pink-400 font-mono bg-pink-500/10 px-1 rounded border border-pink-500/20">customer_info</span>).</span></li>
                                         <li className="flex gap-2"><span className="text-pink-500">•</span> <span><strong className="text-slate-200">Avoid:</strong> Spaces, special chars, SQL reserved keywords.</span></li>
                                     </ul>
                                 </div>
                                 <div className="bg-[#110b1c] p-6 rounded-xl border border-white/5 shadow-inner">
                                     <h4 className="text-sm font-mono text-pink-300 mb-3 uppercase tracking-wider flex items-center gap-2"><Layers3 size={14}/> 2. Medallion Schemas</h4>
                                     <ul className="space-y-3 text-sm text-slate-400">
-                                        <li className="flex gap-2 items-start"><span className="text-pink-500 mt-1">•</span> <span><strong className="text-slate-200">Bronze:</strong> `bronze.` namespace for raw data.</span></li>
-                                        <li className="flex gap-2 items-start"><span className="text-pink-500 mt-1">•</span> <span><strong className="text-slate-200">Silver/Gold:</strong> `silver.` / `gold.` with `dim_` & `fact_` table prefixes.</span></li>
+                                        <li className="flex gap-2 items-start"><span className="text-pink-500 mt-1">•</span> <span><strong className="text-slate-200">Bronze:</strong> <span className="text-pink-400 font-mono bg-pink-500/10 px-1 rounded border border-pink-500/20">bronze.</span> namespace for raw data.</span></li>
+                                        <li className="flex gap-2 items-start"><span className="text-pink-500 mt-1">•</span> <span><strong className="text-slate-200">Silver/Gold:</strong> <span className="text-pink-400 font-mono bg-pink-500/10 px-1 rounded border border-pink-500/20">silver.</span> / <span className="text-pink-400 font-mono bg-pink-500/10 px-1 rounded border border-pink-500/20">gold.</span> with <span className="text-pink-400 font-mono bg-pink-500/10 px-1 rounded border border-pink-500/20">dim_</span> &amp; <span className="text-pink-400 font-mono bg-pink-500/10 px-1 rounded border border-pink-500/20">fact_</span> table prefixes.</span></li>
                                     </ul>
                                 </div>
                                 <div className="bg-[#110b1c] p-6 rounded-xl border border-white/5 shadow-inner">
