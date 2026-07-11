@@ -512,8 +512,8 @@ const ArchitecturePage = () => {
                     style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')" }}
                 />
 
-                <div className="relative z-10 w-full flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
-                    
+                <div className="relative z-10 w-full overflow-x-auto custom-scrollbar pb-6 pt-2">
+                    <div className="flex flex-row items-center justify-between min-w-[1000px] gap-6 px-4">
                     {/* 1. Source Systems */}
                     <div className="flex flex-col gap-4 w-full lg:w-48 z-20">
                         <div className="text-center font-mono text-[10px] text-slate-500 uppercase tracking-widest font-bold">Source Systems</div>
@@ -528,7 +528,7 @@ const ArchitecturePage = () => {
                     </div>
 
                     {/* Animated Beam 1 */}
-                    <div className="hidden lg:flex h-1 bg-slate-800 relative rounded-full overflow-hidden flex-1 mx-4 min-w-[30px] shadow-[inset_0_0_5px_rgba(0,0,0,1)]">
+                    <div className="flex h-1 bg-slate-800 relative rounded-full overflow-hidden flex-1 mx-4 min-w-[30px] shadow-[inset_0_0_5px_rgba(0,0,0,1)]">
                         <motion.div className="absolute top-0 bottom-0 left-0 w-8 bg-cyan-400 blur-[2px]" animate={{ x: ['-50px', '200px'] }} transition={{ repeat: Infinity, duration: 1, ease: "linear" }} />
                     </div>
 
@@ -545,7 +545,7 @@ const ArchitecturePage = () => {
                         </div>
 
                         {/* Animated Beam 2 */}
-                        <div className="hidden lg:flex h-1 bg-slate-800 relative rounded-full overflow-hidden w-12 shadow-[inset_0_0_5px_rgba(0,0,0,1)]">
+                        <div className="flex h-1 bg-slate-800 relative rounded-full overflow-hidden w-12 shadow-[inset_0_0_5px_rgba(0,0,0,1)]">
                             <motion.div className="absolute top-0 bottom-0 left-0 w-4 bg-slate-300 blur-[2px]" animate={{ x: ['-20px', '60px'] }} transition={{ repeat: Infinity, duration: 0.8, ease: "linear", delay: 0.2 }} />
                         </div>
 
@@ -559,7 +559,7 @@ const ArchitecturePage = () => {
                         </div>
 
                         {/* Animated Beam 3 */}
-                        <div className="hidden lg:flex h-1 bg-slate-800 relative rounded-full overflow-hidden w-12 shadow-[inset_0_0_5px_rgba(0,0,0,1)]">
+                        <div className="flex h-1 bg-slate-800 relative rounded-full overflow-hidden w-12 shadow-[inset_0_0_5px_rgba(0,0,0,1)]">
                             <motion.div className="absolute top-0 bottom-0 left-0 w-4 bg-sky-400 blur-[2px]" animate={{ x: ['-20px', '60px'] }} transition={{ repeat: Infinity, duration: 0.8, ease: "linear", delay: 0.4 }} />
                         </div>
 
@@ -574,7 +574,7 @@ const ArchitecturePage = () => {
                     </div>
 
                     {/* Animated Beam 4 */}
-                    <div className="hidden lg:flex h-1 bg-slate-800 relative rounded-full overflow-hidden flex-1 mx-4 min-w-[30px] shadow-[inset_0_0_5px_rgba(0,0,0,1)]">
+                    <div className="flex h-1 bg-slate-800 relative rounded-full overflow-hidden flex-1 mx-4 min-w-[30px] shadow-[inset_0_0_5px_rgba(0,0,0,1)]">
                         <motion.div className="absolute top-0 bottom-0 left-0 w-8 bg-blue-500 blur-[2px]" animate={{ x: ['-50px', '200px'] }} transition={{ repeat: Infinity, duration: 1, ease: "linear", delay: 0.6 }} />
                     </div>
 
@@ -587,6 +587,7 @@ const ArchitecturePage = () => {
                         </GlassCard>
                     </div>
 
+                    </div>
                 </div>
             </div>
 
@@ -595,7 +596,7 @@ const ArchitecturePage = () => {
                 {activeModal && (
                     <motion.div 
                         initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md"
+                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md"
                         onClick={() => setActiveModal(null)}
                     >
                         <motion.div 
@@ -728,7 +729,7 @@ const ETLPipelinePage = () => {
                     </h4>
                     
                     <div className="absolute inset-0 flex flex-col items-center justify-center mt-8 md:mt-0 overflow-x-auto overflow-y-hidden">
-                        <div className="w-full min-w-[650px] h-full relative mx-auto">
+                        <div className="w-full min-w-[1000px] h-full relative mx-auto">
                             {/* Horizontal SVG Paths */}
                             <svg className="w-full h-full absolute inset-0 z-0" viewBox="0 0 1000 500" preserveAspectRatio="none">
                                 <defs>
@@ -912,25 +913,26 @@ CREATE TABLE gold.fact_sales (
                 )}
             </AnimatePresence>
 
-            <div className="relative w-full h-[800px] md:h-[600px] bg-[#05030a] rounded-3xl border border-white/[0.05] shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] overflow-hidden flex items-center justify-center p-4">
+            <div className="relative w-full h-[600px] bg-[#05030a] rounded-3xl border border-white/[0.05] shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTY4LDg1LDI0NywwLjA1KSIvPjwvc3ZnPg==')] opacity-50" />
+                <div className="relative w-full h-full min-w-[800px] scale-[0.45] sm:scale-[0.6] md:scale-100 origin-center flex items-center justify-center">
                 
-                {/* SVG Connections - Hidden on small mobile for simplicity, visible on md+ */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 hidden md:block">
+                {/* SVG Connections */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
                     <motion.path d="M 30% 25% L 50% 50%" stroke={hoveredTable === 'dim_customers' || hoveredTable === 'Fact_Sales' ? 'rgba(59,130,246,0.8)' : 'rgba(59,130,246,0.2)'} strokeWidth={hoveredTable === 'dim_customers' || hoveredTable === 'Fact_Sales' ? 4 : 2} strokeDasharray="4 4" className="transition-all duration-300" />
                     <motion.path d="M 70% 25% L 50% 50%" stroke={hoveredTable === 'dim_products' || hoveredTable === 'Fact_Sales' ? 'rgba(59,130,246,0.8)' : 'rgba(59,130,246,0.2)'} strokeWidth={hoveredTable === 'dim_products' || hoveredTable === 'Fact_Sales' ? 4 : 2} strokeDasharray="4 4" className="transition-all duration-300" />
                     <motion.path d="M 30% 75% L 50% 50%" stroke={hoveredTable === 'dim_date' || hoveredTable === 'Fact_Sales' ? 'rgba(59,130,246,0.8)' : 'rgba(59,130,246,0.2)'} strokeWidth={hoveredTable === 'dim_date' || hoveredTable === 'Fact_Sales' ? 4 : 2} strokeDasharray="4 4" className="transition-all duration-300" />
                     <motion.path d="M 70% 75% L 50% 50%" stroke={hoveredTable === 'dim_store' || hoveredTable === 'Fact_Sales' ? 'rgba(59,130,246,0.8)' : 'rgba(59,130,246,0.2)'} strokeWidth={hoveredTable === 'dim_store' || hoveredTable === 'Fact_Sales' ? 4 : 2} strokeDasharray="4 4" className="transition-all duration-300" />
                 </svg>
 
-                {/* Mobile Layout: Stacked Grid. Desktop Layout: Absolute positioning */}
-                <div className="relative z-20 w-full h-full flex flex-col md:block items-center justify-center gap-6 md:gap-0">
+                {/* Desktop Layout (Now handles mobile via scale) */}
+                <div className="relative z-20 w-full h-full block items-center justify-center gap-0">
                     
                     <motion.div 
                         onHoverStart={() => setHoveredTable('Fact_Sales')}
                         onHoverEnd={() => setHoveredTable(null)}
                         whileHover={{ scale: 1.02 }}
-                        className={`md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-64 bg-[#110b1c]/90 backdrop-blur-xl border ${hoveredTable === 'Fact_Sales' || !hoveredTable ? 'border-blue-500 shadow-[0_0_30px_rgba(59,130,246,0.4)]' : 'border-blue-500/30 opacity-50'} rounded-xl overflow-hidden transition-all duration-300 cursor-default`}
+                        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 bg-[#110b1c]/90 backdrop-blur-xl border ${hoveredTable === 'Fact_Sales' || !hoveredTable ? 'border-blue-500 shadow-[0_0_30px_rgba(59,130,246,0.4)]' : 'border-blue-500/30 opacity-50'} rounded-xl overflow-hidden transition-all duration-300 cursor-default`}
                     >
                         <div className="bg-blue-500/20 px-4 py-3 text-sm font-bold text-white flex items-center justify-between border-b border-blue-500/30">
                             <span className="flex items-center gap-2"><Table2 size={16}/> fact_sales</span>
@@ -946,28 +948,8 @@ CREATE TABLE gold.fact_sales (
                         </div>
                     </motion.div>
 
-                    {/* Dimensions Container for Mobile (Grid) */}
-                    <div className="w-full grid grid-cols-2 gap-4 md:hidden">
-                        {['dim_customers', 'dim_products', 'dim_date', 'dim_store'].map((dim) => (
-                             <motion.div 
-                                key={dim} 
-                                onHoverStart={() => setHoveredTable(dim)}
-                                onHoverEnd={() => setHoveredTable(null)}
-                                className={`w-full bg-[#1c1c24]/90 backdrop-blur border ${hoveredTable === dim || hoveredTable === 'Fact_Sales' || !hoveredTable ? 'border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.2)]' : 'border-white/10 opacity-30'} rounded-lg overflow-hidden transition-all duration-300`}
-                            >
-                                <div className="bg-emerald-500/10 px-3 py-2 text-xs font-bold text-emerald-100 flex justify-between items-center border-b border-emerald-500/20">
-                                    <span className="truncate">{dim}</span>
-                                </div>
-                                <div className="p-0 text-[10px] font-mono text-slate-400">
-                                   <div className="px-3 py-1.5 flex items-center gap-2 text-yellow-500 border-b border-white/5"><Key size={10}/> {dim.split('_')[1]}_key</div>
-                                   <div className="px-3 py-1.5 border-b border-white/5 text-slate-300">name / desc</div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-
                     {/* Dimensions for Desktop (Absolute Positioned) */}
-                    <div className="hidden md:block">
+                    <div className="block">
                         {['dim_customers', 'dim_products', 'dim_date', 'dim_store'].map((dim, i) => (
                             <motion.div 
                                 key={dim} 
@@ -994,6 +976,7 @@ CREATE TABLE gold.fact_sales (
                             </motion.div>
                         ))}
                     </div>
+                </div>
                 </div>
             </div>
         </div>

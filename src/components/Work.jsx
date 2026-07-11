@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 
 const PremiumPipelineVisualizer = () => {
     return (
-        <div className="hidden md:flex md:col-span-2 items-center justify-center p-6 bg-[#0a0514] rounded-xl border border-white/[0.05] relative overflow-hidden group-hover:border-blue-500/20 transition-colors duration-500 min-h-[240px]">
-            {/* Background glowing orb */}
+        <div className="flex flex-col md:col-span-2 items-center justify-center p-6 bg-[#0a0514] rounded-xl border border-white/[0.05] relative overflow-hidden group-hover:border-blue-500/20 transition-colors duration-500 min-h-[240px]">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-500/10 rounded-full blur-[50px] group-hover:bg-blue-500/20 transition-all duration-700" />
             
             {/* Connection Lines (SVG) */}

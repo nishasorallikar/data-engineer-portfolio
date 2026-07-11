@@ -77,12 +77,14 @@ const Navbar = () => {
                 </Link>
             </div>
 
-            <button
-                onClick={() => handleNavigation('contact')}
-                className="hidden md:flex baraa-btn shadow-md"
-            >
-                Contact
-            </button>
+            <div className="hidden md:block">
+                <button
+                    onClick={() => handleNavigation('contact')}
+                    className="baraa-btn shadow-md"
+                >
+                    Contact
+                </button>
+            </div>
 
             {/* Mobile Hamburger */}
             <button
